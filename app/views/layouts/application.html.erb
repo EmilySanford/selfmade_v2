@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SelfmadeApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  @media (min-width: 992px) {
+    body{
+      background-color: black;
+    }
+
+    .salfmade_logo {
+      margin-top:0;
+      margin-bottom: 0;
+    }
+
+    .container-fluid{
+      min-height: 100vh;
+      width: 100vh;
+    }
+
+    .vcenter {
+     display: inline-block;
+     vertical-align: middle;
+     float: none;
+     margin-top: 0 !important;
+   }
+
+   }
+   body{
+     background-color: black;
+   }
+
+   .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    margin-top: 5%;
+}
+
+</style>
+
+</head>
+<body>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+
+</body>
+</html>
