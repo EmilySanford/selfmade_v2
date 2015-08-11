@@ -5,11 +5,12 @@ class TwilioController < ApplicationController
 @@auth_token = '80f5ed504353b8b438fa852a09379a27'
 #
   def quickstart
+  user = User.find(params[:id])
   @client = Twilio::REST::Client.new @@account_sid, @@auth_token
  @client.messages.create(
   from: '+14807253840',
-  to: '+19737221106',
-  body: 'Fantastic 4',
+  to: '+1' + user.phone_number,
+  body: "Thank you #{user.first_name} for using SelfMade. Your email is #{user.email}",
   media_url: 'http://www.washingtonpost.com/news/morning-mix/wp-content/uploads/sites/21/2014/09/Grumpy_Cat_Endorsement-017d7-ULFU.jpg'
 )
 # @client.messages.create(
@@ -18,7 +19,7 @@ class TwilioController < ApplicationController
 #  body: 'Fantastic 4',
 #    media_url: 'http://www.washingtonpost.com/news/morning-mix/wp-content/uploads/sites/21/2014/09/Grumpy_Cat_Endorsement-017d7-ULFU.jpg'
 # )
-  redirect_to root_path
+  redirect_to thank_you_path
   end
 #   twiml.text
 end
