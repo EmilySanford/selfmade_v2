@@ -1,16 +1,18 @@
 <div class="row">
-  <div class="col-md-10 center-block col-xs-10 col-sm-10 col-lg-8">
-  <%= image_tag("SalfMade_logo_Arquitecta_white.png", class: "img-responsive salfmade_logo col-md-offset-1 col-xs-offset-1 col-sm-offset-1 col-lg-offset-4") %>
-</div>
-
     <div class="col-md-13 center-block col-xs-13 col-sm-13 col-lg-9">
   <%= image_tag("Nazli_Kris.gif", class: "img-responsive landing_page_img col-lg-offset-3") %>
 </div>
 
-    <div class="col-md-4 center-block col-xs-4 col-sm-4 col-lg-7 text-center vcenter">
-      <a href="/pages/google_survey">
+    <!-- <div class="col-md-9 center-block col-xs-9 col-sm-8 col-lg-12 text-center"> -->
+      <!-- <div class="welcome_phone_number col-md-offset-4 col-xs-offset-4 col-sm-offset-5 col-lg-offset-2  "> -->
+        <%= form_tag(logic_path, method: "get") do %>
+          <div class="form-group form-group-lg col-md-9 col-xs-5 col-sm-8 col-lg-12">
+            <%= text_field_tag :phone_number, nil, class: "form-control welcome_phone_number col-md-offset-4 col-xs-offset-4 col-sm-offset-5 col-lg-offset-2", placeholder: "Enter Number to get Started"%>
+          </div>
+        <% end %>
+       <!-- </div> -->
+      <!-- <a href="/pages/google_survey">
       <%= image_tag("SalfMade_logo_Arquitecta_white2.png", class: "img-responsive col-md-offset-12 col-xs-offset-12 col-sm-offset-12 col-lg-offset-6") %>
-    </a>
-  <!-- <%= link_to("Click to Enter", google_survey_path, class: "link text-center h1") %> -->
-</div>
+    </a> -->
+      <!-- </div> -->
 </div>
