@@ -8,46 +8,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <style type="text/css">
-  @media (min-width: 992px) {
-    body{
-      background-color: black;
-    }
-
-    .salfmade_logo {
-      margin-top:0;
-      margin-bottom: 0;
-    }
-
-    .container-fluid{
-      min-height: 100vh;
-      width: 100vh;
-    }
-
-    .vcenter {
-     display: inline-block;
-     vertical-align: middle;
-     float: none;
-     margin-top: 0 !important;
-   }
-
-   }
-   body{
-     background-color: black;
-   }
-
-   .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-    margin-top: 5%;
-}
-
-</style>
-
+   <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track' => true%>
 </head>
 <body>
   <div class="container-fluid">
+    <div class="col-md-10 center-block col-xs-10 col-sm-10 col-lg-8">
+      <%= image_tag("SalfMade_logo_Arquitecta_white.png", class: "img-responsive salfmade_logo col-md-offset-1 col-xs-offset-1 col-sm-offset-1 col-lg-offset-4") %>
+    </div>
+
     <%= yield %>
   </div>
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
   get 'pages/google_survey' => 'pages#google_survey', as: :google_survey
-  # post 'pages/logic' => 'pages#phonenumber_logic', as: :logic
+  get 'pages/logic' => 'pages#phonenumber_logic', as: :logic
   # get 'pages/pictures_upload' => 'pages#pictures_upload', as: :pictures_upload
   # post 'pages/drive_upload' => 'pages#drive_upload', as: :drive_upload
 

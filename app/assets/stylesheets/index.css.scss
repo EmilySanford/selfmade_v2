@@ -1,0 +1,42 @@
+@media (min-width: 992px) {
+  body{
+    background-color: black;
+  }
+
+  .salfmade_logo {
+    margin-top:0;
+    margin-bottom: 0;
+  }
+
+  .container-fluid{
+    min-height: 100vh;
+    width: 100vh;
+  }
+
+  .vcenter {
+   display: inline-block;
+   vertical-align: middle;
+   float: none;
+   margin-top: 0 !important;
+ }
+
+ }
+ body{
+   background-color: black;
+ }
+
+ .vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  margin-top: 5%;
+}
+
+.form-control {
+  width: 60%;
+}
+
+.welcome_phone_number {
+  margin-top: 10%;
+  margin-bottom: 0;
+}
