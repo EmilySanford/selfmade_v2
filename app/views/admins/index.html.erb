@@ -1,0 +1,9 @@
+<div class = "white_color placeholder" >
+<% if current_admin  %>
+  <br><br><br>
+  <%= link_to "Log Out of Admin", destroy_admin_session_path, method: 'delete' %>
+<% end %>
+<% @users.each do |user| %>
+
+<% end %>
+</div>

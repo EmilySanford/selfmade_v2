@@ -53,9 +53,14 @@
   </div>
 
   <div class="form-group">
-    <label for="location" class="col-sm-2 control-label white_color">Which (if any) editing apps do you use? <span style="color:red;">*</span></label>
-    <%= f.check_box :used_editing_apps, { :multiple => true }, 'FaceTune', nil %> <label class = "white_color">FaceTune</label>
-    <%= f.check_box :used_editing_apps, { :multiple => true }, 'Perfect365', nil %> <label class = "white_color">Perfect365</label>
+    <label for="location" class="col-sm-0 control-label white_color">Which (if any) editing apps do you use? <span style="color:red;">*</span></label><br>
+    <br>
+    <%= f.check_box :used_editing_apps, { :multiple => true }, 'FaceTune', nil %> <label class = "white_color">FaceTune</label><br>
+    <%= f.check_box :used_editing_apps, { :multiple => true }, 'Perfect365', nil %> <label class = "white_color">Perfect365</label><br>
+    <%= f.check_box :used_editing_apps, { :multiple => true }, 'Aviary', nil %> <label class = "white_color">Aviary</label><br>
+    <%= f.check_box :used_editing_apps, { :multiple => true }, 'Enlight', nil %> <label class = "white_color">Enlight</label><br>
+    <%= f.check_box :used_editing_apps, { :multiple => true }, 'VSCO', nil %> <label class = "white_color">VSCO</label><br>
+    <%= f.check_box :used_editing_apps, { :multiple => true }, 'PicsArt', nil %> <label class = "white_color">PicsArt</label>
   </div>
 
 

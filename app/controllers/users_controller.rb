@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.update(user_params)
     user.used_editing_apps = params[:user][:used_editing_apps]
-    user.save
+    user.save if user.changed?
     redirect_to quickstart_path(user)
   end
 
