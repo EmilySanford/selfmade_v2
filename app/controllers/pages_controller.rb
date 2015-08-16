@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-
+  
   def phonenumber_logic
   #  phonenumber = params[:phone_number].gsub(/\D/, '')
   #  if phonenumber.length == 10

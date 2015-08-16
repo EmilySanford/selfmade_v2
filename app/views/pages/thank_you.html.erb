@@ -1,1 +1,8 @@
 <h1 class = "white_color placeholder"> Thank you for using Self Made </h1>
+
+<div class="pictures_upload">
+<%= form_tag(drive_upload_user_path, enctype: "multipart/form-data") do %>
+  <%= file_field_tag "cameraInput", multiple: true, accept: "image/*", capture: "camera", name: "images[]" %>
+<%= submit_tag "Submit Photos" %>
+<% end %>
+</div>

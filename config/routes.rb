@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'pages/google_survey/:id' => 'pages#google_survey', as: :google_survey
   get 'pages/logic' => 'pages#phonenumber_logic', as: :logic
-  get 'pages/thank_you' => 'pages#thank_you', as: :thank_you
+  get 'pages/thank_you/:id' => 'pages#thank_you', as: :thank_you
   # get 'pages/pictures_upload' => 'pages#pictures_upload', as: :pictures_upload
-  # post 'pages/drive_upload' => 'pages#drive_upload', as: :drive_upload
-  resources :users, only: [:update]
+  resources :users, only: [:update] do 
+    member do
+      post 'drive_upload'
+    end
+  end
   get 'quickstart/:id' => 'twilio#quickstart', as: :quickstart
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -10,7 +10,7 @@ class TwilioController < ApplicationController
  @client.messages.create(
   from: '+14807253840',
   to: '+1' + user.phone_number,
-  body: "Thank you #{user.first_name} for using SelfMade. Your email is #{user.email}",
+  body: "Thank you #{user.first_name} for using SelfMade. Your email is #{user.email}. Please go to #{request.base_url}/pages/thank_you/#{user.id}",
   media_url: 'http://www.washingtonpost.com/news/morning-mix/wp-content/uploads/sites/21/2014/09/Grumpy_Cat_Endorsement-017d7-ULFU.jpg'
 )
 # @client.messages.create(
@@ -19,19 +19,6 @@ class TwilioController < ApplicationController
 #  body: 'Fantastic 4',
 #    media_url: 'http://www.washingtonpost.com/news/morning-mix/wp-content/uploads/sites/21/2014/09/Grumpy_Cat_Endorsement-017d7-ULFU.jpg'
 # )
-  redirect_to thank_you_path
+  redirect_to thank_you_path(user)
   end
-#   twiml.text
-end
-
-
- class Moo
-@@name = "milky"
-def name
-  @@name
-end
-
-def name=(name)
-  @@name = name
-end
 end
