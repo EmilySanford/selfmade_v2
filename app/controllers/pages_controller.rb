@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  
+
   def phonenumber_logic
   #  phonenumber = params[:phone_number].gsub(/\D/, '')
   #  if phonenumber.length == 10
@@ -13,8 +13,8 @@ class PagesController < ApplicationController
  #   end
   end
 
-  def google_survey
-    @user = User.find(params[:id])
+  def join
+    @user = User.new
   end
 
 end

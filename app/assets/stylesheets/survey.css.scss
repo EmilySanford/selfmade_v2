@@ -1,0 +1,17 @@
+.form-control {
+  width: 60%;
+}
+
+.survey_input {
+  background-color: black;
+  border-color: white;
+  margin: 0 auto;
+}
+.form-control::-webkit-input-placeholder { color: white; }
+.form-control:-moz-placeholder { color: white; }
+.form-control::-moz-placeholder { color: white; }
+.form-control:-ms-input-placeholder { color: white; }
+
+.join_form {
+  margin-top: 20%;
+}

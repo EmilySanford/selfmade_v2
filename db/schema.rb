@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812170839) do
+ActiveRecord::Schema.define(version: 20150817153841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,15 +35,10 @@ ActiveRecord::Schema.define(version: 20150812170839) do
   add_index "admins", ["unlock_token"], name: "index_admins_on_unlock_token", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "phone_number"
-    t.string  "email"
-    t.string  "instagram_handler"
-    t.string  "snapchat_handler"
-    t.integer "age"
-    t.string  "location"
-    t.text    "used_editing_apps"
+    t.string "phone_number"
+    t.string "instagram_handler"
+    t.string "snapchat_handler"
+    t.string "name"
   end
 
 end

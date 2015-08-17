@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     # Add other requested scopes.
 ]
 
-  def update
+  def create
     user = User.find(params[:id])
     user.update(user_params)
     user.used_editing_apps = params[:user][:used_editing_apps]

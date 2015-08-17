@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   devise_for :admins, :skip => :registrations
   resources :admins, only: [:index]
   root 'pages#index'
-  get 'pages/google_survey/:id' => 'pages#google_survey', as: :google_survey
+  get 'pages/experience' => 'pages#experience', as: :experience
+  get 'pages/gallery' => 'pages#gallery', as: :gallery
+  get 'pages/about' => 'pages#about', as: :about
+  get 'pages/join' => 'pages#join', as: :join
   get 'pages/logic' => 'pages#phonenumber_logic', as: :logic
   get 'pages/thank_you/:id' => 'pages#thank_you', as: :thank_you
   # get 'pages/pictures_upload' => 'pages#pictures_upload', as: :pictures_upload
-  resources :users, only: [:update] do 
+  resources :users, only: [:create] do
     member do
       post 'drive_upload'
     end
