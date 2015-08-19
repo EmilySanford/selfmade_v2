@@ -1,0 +1,12 @@
+<h1> Texts with <%= @user.name %>, Phone Number: <%= @user.phone_number %></h1>
+
+<% @sorted_all_messages.each do |message| %>
+<% if message.from == '+14807253840'  %>
+  <div class ="blue_div">
+<% else %>
+  <div class ="yellow_div">
+<% end %>
+<p class="white_color_and_center"> Message: <%= message.body %>
+<p class="white_color_and_center"> Date Sent: <%= message.date_sent %> <p>
+</div><br>
+<% end %>

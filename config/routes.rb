@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :admins, :skip => :registrations
-  resources :admins, only: [:index]
   root 'pages#index'
   get 'pages/experience' => 'pages#experience', as: :experience
   get 'pages/gallery' => 'pages#gallery', as: :gallery
@@ -8,12 +7,20 @@ Rails.application.routes.draw do
   get 'pages/join' => 'pages#join', as: :join
   get 'pages/logic' => 'pages#phonenumber_logic', as: :logic
   get 'pages/thank_you/:id' => 'pages#thank_you', as: :thank_you
-  # get 'pages/pictures_upload' => 'pages#pictures_upload', as: :pictures_upload
+
   resources :users, only: [:create] do
     member do
       post 'drive_upload'
     end
   end
+
+  resources :admins, only: [:index] do
+    member do
+      get 'show_text_conversations' => 'twilio#show_text_conversations'
+    end
+  end
+
+
   get 'quickstart/:id' => 'twilio#quickstart', as: :quickstart
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

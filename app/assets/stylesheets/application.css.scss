@@ -15,18 +15,13 @@
  *= require_self
  */
 
+ body{
+   background-color: black;
+ }
 
  .container-fluid{
    min-height: 100%;
    width: 100%;
- }
-
-a:hover{
-  cursor: hand;
-}
-
- .landing_page{
-   margin-top: 5%;
  }
 
  .white_color_and_center {

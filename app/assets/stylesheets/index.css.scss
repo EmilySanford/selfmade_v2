@@ -1,31 +1,3 @@
-@media (min-width: 992px) {
-  body{
-    background-color: black;
-  }
-
-  .salfmade_logo {
-    margin-top:0;
-    margin-bottom: 0;
-  }
-
-  .container-fluid{
-    min-height: 100vh;
-    width: 100vh;
-  }
-
-  .vcenter {
-   display: inline-block;
-   vertical-align: middle;
-   float: none;
-   margin-top: 0 !important;
-  }
-
- }
-
- .salfmade_logo {
-   margin-top: 7%;
-   margin-bottom: 7%;
- }
 
  body{
    background-color: black;
@@ -38,6 +10,42 @@
   margin-top: 5%;
 }
 
-.control-label{
-  float:left;
+.join_form {
+  margin-top: 20%;
+}
+//
+.landing{
+  margin: 0 auto;
+  margin-top: 6%;
+}
+
+.landing_2 {
+  margin: 0 auto;
+  margin-top: 6%;
+}
+
+.experience {
+  margin: 0 auto;
+  margin-top: 12%;
+}
+
+.gallery_text {
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.gallery_01 {
+  margin: 0 auto;
+  margin-top: 8%;
+}
+
+.contact_text_01 {
+  margin: 0 auto;
+  margin-top: 41%;
+}
+
+.contact_text_02 {
+  margin: 0 auto;
+  margin-top: 41%;
 }

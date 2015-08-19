@@ -1,24 +1,27 @@
 class TwilioController < ApplicationController
-  skip_before_action :verify_authenticity_token
-# =>
+  before_action :authenticate_admin!, only: [:show_text_conversations]
+
 @@account_sid = 'AC6330f311861cdd30da90cba2522e4cc5'
 @@auth_token = '80f5ed504353b8b438fa852a09379a27'
-#
+
   def quickstart
   user = User.find(params[:id])
-  @client = Twilio::REST::Client.new @@account_sid, @@auth_token
- @client.messages.create(
-  from: '+14807253840',
+  client = Twilio::REST::Client.new @@account_sid, @@auth_token
+  client.messages.create(
+  from: '+1 3059890148',
   to: '+1' + user.phone_number,
-  body: "Thank you #{user.first_name} for using SelfMade. Your email is #{user.email}. Please go to #{request.base_url}/pages/thank_you/#{user.id}",
-  media_url: 'http://www.washingtonpost.com/news/morning-mix/wp-content/uploads/sites/21/2014/09/Grumpy_Cat_Endorsement-017d7-ULFU.jpg'
-)
-# @client.messages.create(
-#  from: '+14807253840',
-#  to: '+13059890148',
-#  body: 'Fantastic 4',
-#    media_url: 'http://www.washingtonpost.com/news/morning-mix/wp-content/uploads/sites/21/2014/09/Grumpy_Cat_Endorsement-017d7-ULFU.jpg'
-# )
-  redirect_to thank_you_path(user)
+  body: "Thank you #{user.name} for choosing SelfMade.")
+  redirect_to root_path
+  end
+
+  def show_text_conversations
+    client = Twilio::REST::Client.new @@account_sid, @@auth_token
+    @user = User.find(params[:id])
+    received_messages = client.account.messages.list(from: '+1' + @user.phone_number)
+    sent_messages = client.account.messages.list(to: '+1' + @user.phone_number)
+    all_messages = received_messages | sent_messages
+    @sorted_all_messages = all_messages.sort do |m1, m2|
+      DateTime.strptime(m1.date_sent, '%A, %d %b %Y %H:%M:%S %z') <=>   DateTime.strptime(m2.date_sent, '%A, %d %b %Y %H:%M:%S %z')
+    end
   end
 end

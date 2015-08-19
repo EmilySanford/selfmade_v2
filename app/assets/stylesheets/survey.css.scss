@@ -12,6 +12,12 @@
 .form-control::-moz-placeholder { color: white; }
 .form-control:-ms-input-placeholder { color: white; }
 
-.join_form {
-  margin-top: 20%;
+.blue_div {
+  border-style: solid;
+  border-color: blue;
+}
+
+.yellow_div {
+  border-style: solid;
+  border-color: yellow;
 }

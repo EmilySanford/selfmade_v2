@@ -1,9 +1,23 @@
-<div class = "white_color placeholder" >
-<% if current_admin  %>
-  <br><br><br>
-  <%= link_to "Log Out of Admin", destroy_admin_session_path, method: 'delete' %>
-<% end %>
-<% @users.each do |user| %>
+<div class = "row" >
+  <%= link_to "Log Out of Admin", destroy_admin_session_path, method: 'delete' if current_admin %>
+</div>
 
-<% end %>
+<div class = "row" >
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>Instagram</th>
+      <th>Snapchat</th>
+    </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <th><a href="<%= show_text_conversations_admin_path(user) %>"><%= user.name %></a></th>
+      <th><%= user.phone_number %></th>
+      <th><%= user.instagram_handler %></th>
+      <th><%= user.snapchat_handler %></th>
+    </tr>
+  <% end %>
+  </table>
 </div>
