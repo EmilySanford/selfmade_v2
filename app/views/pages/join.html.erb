@@ -1,34 +1,44 @@
+<div class="row landing_page">
+  <div class="col-md-14 center-block col-xs-14 col-sm-14 col-lg-9">
+    <%= image_tag("form_text_01.png", class: "img-responsive gallery_text col-md-offset-1 col-lg-offset-1") %>
+  </div>
+</div>
+
 <%= form_for @user, html: {class: "form-horizontal join_form"} do |f| %>
-<div class="form-group">
-  <label class="col-sm-2 control-label">Email</label>
+<div class="form_group_4">
+<div class="form-group form_label_2">
+  <label class="col-sm-2 control-label form_label">Name</label>
   <div class="col-sm-10">
     <%= f.text_field :name, class: "form-control input-lg survey_input", required: true %>
   </div>
 </div>
 
-<div class="form-group">
-  <label class="col-sm-2 control-label">Email</label>
+<div class="form-group form_label_2">
+  <label class="col-sm-2 control-label form_label">Phone #</label>
   <div class="col-sm-10">
     <%= f.text_field :phone_number, class: "form-control input-lg survey_input", required: true %>
   </div>
 </div>
 
-<div class="form-group">
-  <label class="col-sm-2 control-label">Email</label>
+<div class="form-group form_label_2">
+  <label class="col-sm-2 control-label form_label">Instagram</label>
   <div class="col-sm-10">
     <%= f.text_field :instagram_handler, class: "form-control input-lg survey_input", required: true %>
   </div>
 </div>
 
-<div class="form-group">
-  <label class="col-sm-2 control-label">Email</label>
+<div class="form-group form_label_2">
+  <label class="col-sm-2 control-label form_label">Snapchat</label>
   <div class="col-sm-10">
     <%= f.text_field :snapchat_handler, class: "form-control input-lg survey_input", required: true %>
   </div>
 </div>
+</div>
 
-<div class="col-sm-10 col-sm-offset-5">
-  <%= f.submit %>
+<div class="row landing_page">
+  <div class="col-md-13 center-block col-xs-14 col-sm-14 col-lg-9">
+    <%= image_submit_tag("Join_01.png", class: "img-responsive landing_2 col-md-offset-1 col-lg-offset-1") %>
+  </div>
 </div>
 
 <% end %>
