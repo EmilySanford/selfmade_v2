@@ -14,8 +14,10 @@ input[type='text'],
 input[type='number'],
 textarea {
   font-size: 3em;
-  color: white;
+  color: #00ff00;
 }
+
+input:focus { color: #00ff00 }
 
 .form-control::-webkit-input-placeholder { color: white; }
 .form-control:-moz-placeholder { color: white; }

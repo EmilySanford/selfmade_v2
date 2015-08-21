@@ -5,12 +5,15 @@ class TwilioController < ApplicationController
 @@auth_token = '80f5ed504353b8b438fa852a09379a27'
 
   def quickstart
-  user = User.find(params[:id])
-  client = Twilio::REST::Client.new @@account_sid, @@auth_token
-  client.messages.create(
-  from: '+1 3059890148',
-  to: '+1' + user.phone_number,
-  body: "Thank you #{user.name} for choosing SelfMade.")
+  begin
+    user = User.find(params[:id])
+    client = Twilio::REST::Client.new @@account_sid, @@auth_token
+    client.messages.create(
+    from: '+1 3059890148',
+    to: '+1' + user.phone_number,
+    body: "Thank you #{user.name} for choosing SelfMade.")
+  rescue
+  end
   redirect_to root_path
   end
 
@@ -25,3 +28,6 @@ class TwilioController < ApplicationController
     end
   end
 end
+
+
+# client.messages.create( from: '+1 3059890148', to: '+1' + user.phone_number, body: "Thank you #{user.name} for choosing SelfMade.")

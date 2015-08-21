@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins, :skip => :registrations
+  # root :to => "pages#index", :id => nil
   root 'pages#index'
   get 'pages/experience' => 'pages#experience', as: :experience
   get 'pages/gallery' => 'pages#gallery', as: :gallery
