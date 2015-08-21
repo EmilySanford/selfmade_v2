@@ -9,7 +9,7 @@ class TwilioController < ApplicationController
     user = User.find(params[:id])
     client = Twilio::REST::Client.new @@account_sid, @@auth_token
     client.messages.create(
-    from: '+1 3059890148',
+    from: '+14807253840',
     to: '+1' + user.phone_number,
     body: "Thank you #{user.name} for choosing SelfMade.")
   rescue
