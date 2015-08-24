@@ -11,9 +11,16 @@
  * file per style scope.
  *
 *= require normalize-rails
- *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "admin";
+@import "index";
+@import "medium_laptop";
+@import "small_devices";
+@import "survey";
 
  body{
    background-color: black;
