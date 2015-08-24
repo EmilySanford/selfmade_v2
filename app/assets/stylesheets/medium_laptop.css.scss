@@ -21,11 +21,6 @@
     float: none;
   }
 
-  .join_form {
-    margin-top: 5%;
-  }
-
-
   a:hover{
     cursor: hand;
   }
@@ -33,5 +28,27 @@
   .experience{
     margin-top: 4%;
   }
+
+  .gallery_text{
+    width:40%;
+  }
+
+  .form-control {
+    width: inherit;
+    padding: 3%;
+  }
+
+  .form_label{
+    margin-top: 0;
+  }
+
+  .gallery_text_desktop{
+    margin-top: -3%;
+  }
+
+  .landing_3 {
+    margin-top: 3%;
+  }
+
 
  }
