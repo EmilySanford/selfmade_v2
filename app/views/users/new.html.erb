@@ -1,0 +1,40 @@
+<h1 style="color:white;text-align:center;"> Admin's User sign up form</h1>
+
+<%= form_for @user, html: {class: "form-horizontal join_form"} do |f| %>
+<div class="form_group_4">
+<div class="form-group form_label_2">
+  <label class="col-sm-3 control-label form_label">Name</label>
+  <div class="col-sm-9">
+    <%= f.text_field :name, class: "form-control input-lg survey_input", required: true %>
+  </div>
+</div>
+
+<div class="form-group form_label_2">
+  <label class="col-sm-3 control-label form_label">Phone #</label>
+  <div class="col-sm-9">
+    <%= f.text_field :phone_number, class: "form-control input-lg survey_input", required: true %>
+  </div>
+</div>
+
+<div class="form-group form_label_2">
+  <label class="col-sm-3 control-label form_label">Instagram</label>
+  <div class="col-sm-9">
+    <%= f.text_field :instagram_handler, class: "form-control input-lg survey_input", required: true %>
+  </div>
+</div>
+
+<div class="form-group form_label_2">
+  <label class="col-sm-3 control-label form_label">Snapchat</label>
+  <div class="col-sm-9">
+    <%= f.text_field :snapchat_handler, class: "form-control input-lg survey_input", required: true %>
+  </div>
+</div>
+</div>
+
+<div class="row landing_page">
+  <div class="col-md-13 center-block col-xs-14 col-sm-14">
+    <%= image_submit_tag("Join_01.png", class: "img-responsive landing_2 landing_3 col-md-offset-1 col-lg-4 col-lg-offset-4") %>
+  </div>
+</div>
+
+<% end %>

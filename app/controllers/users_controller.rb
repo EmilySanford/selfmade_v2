@@ -6,6 +6,15 @@ class UsersController < ApplicationController
     redirect_to quickstart_path(user)
     # redirect_to controller: 'pages', action: "index", id: user.id
   end
+  
+  def new
+    @user = User.new
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+		redirect_to(admins_path) if @user.destroy
+  end
   #
   # def drive_upload
   # drive = Google::Apis::DriveV2::DriveService.new

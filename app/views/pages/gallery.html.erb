@@ -4,20 +4,56 @@
   </div>
 </div>
 
-<div class="row landing_page">
+<!-- <div class="row landing_page">
   <div class="col-md-14 center-block col-xs-14 col-sm-14 col-lg-9">
     <%= image_tag("gallery_all.png", class: "img-responsive gallery_01 col-md-offset-1 col-lg-offset-") %>
   </div>
-</div>
+</div> -->
 
 
 <div class="row landing_page">
   <div class="col-md-14 center-block col-xs-14 col-sm-14 col-lg-9">
-    <table>
+    <table class="col-lg-offset-2">
       <tr>
-        <th><img src="" alt="" /></th>
+        <th class = "gallery_th" ><%= image_tag("Nazli_01.jpg", class: "img-responsive new1 gallery_change gallery_01", id: "new1")%></th>
+        <th class = "gallery_th" ><%= image_tag("Tory_01.jpg", class: "img-responsive new2 gallery_change gallery_01", id: "new2")%></th>
+        <th class = "gallery_th" ><%= image_tag("Nazli_03.jpg", class: "img-responsive new3 gallery_change gallery_01", id: "new3")%></th>
       </tr>
-
+      <tr>
+        <th class = "gallery_th" ><%= image_tag("Laura_01.jpg", class: "img-responsive new4 gallery_change gallery_01", id: "new4", id: "new4")%></th>
+        <th class = "gallery_th" ><%= image_tag("Chinae_01.jpg", class: "img-responsive new5 gallery_change gallery_01", id: "new5")%></th>
+        <th class = "gallery_th" ><%= image_tag("Kali_01.jpg", class: "img-responsive new6 gallery_change gallery_01", id: "new6")%></th>
+      </tr>
+      <tr>
+        <th class = "gallery_th" ><%= image_tag("Erin_01.jpg", class: "img-responsive new7 gallery_change gallery_01", id: "new7")%></th>
+        <th class = "gallery_th" ><%= image_tag("Tory_03.jpg", class: "img-responsive new8 gallery_change gallery_01", id: "new8")%></th>
+        <th class = "gallery_th" ><%= image_tag("Ecem_01.jpg", class: "img-responsive new9 gallery_change gallery_01", id: "new9")%></th>
+      </tr>
     </table>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(function(){
+    $(".gallery_change").click(function(){
+    // var string = $(this).attr("class").split(" ")[1];
+    // var number = string.slice(3,4)
+    var number = $(this).attr("id").slice(3,4);
+    console.log(number)
+    // var toggle = "new" + number + " " + "old" + number
+    // if ($(this).attr("id") == "new1"){
+    //   $(this).attr("id", "old1")
+    // }
+    //
+    // debugger;
+    if ($(this).attr("id").slice(0,3) == "new"){
+      $(this).attr("id", "old" + number)
+      console.log("here")
+    } else {
+      $(this).attr("id", "new" + number)
+      console.log("here2")
+    }
+    // $(this).toggleClass(toggle)
+    })
+  })
+</script>

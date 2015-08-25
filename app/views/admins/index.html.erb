@@ -3,12 +3,17 @@
 </div>
 
 <div class = "row" >
+  <%= link_to "Add new users", new_user_path if current_admin %>
+</div>
+
+<div class = "row" >
   <table class= "admintable">
     <tr>
       <th>Name</th>
       <th>Phone Number</th>
       <th>Instagram</th>
       <th>Snapchat</th>
+      <th>Delete user</th>
     </tr>
 
   <% @users.each do |user| %>
@@ -17,6 +22,7 @@
       <th><%= user.phone_number %></th>
       <th><%= user.instagram_handler %></th>
       <th><%= user.snapchat_handler %></th>
+      <th><%= button_to "delete user", user_path(user), method: :delete %></th>
     </tr>
   <% end %>
   </table>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'pages/logic' => 'pages#phonenumber_logic', as: :logic
   get 'pages/thank_you/:id' => 'pages#thank_you', as: :thank_you
 
-  resources :users, only: [:create] do
+  resources :users, only: [:new, :create, :destroy] do
     member do
       post 'drive_upload'
     end
