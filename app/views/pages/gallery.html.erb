@@ -36,24 +36,15 @@
 <script type="text/javascript">
   $(function(){
     console.log("momo")
-    $(".gallery_change").bind('touchstart', function(e){
-      e.preventDefault();
-      var number = string.slice(3,4)
-      console.log("heere")
-      $(this).attr("id", "old" + number)
-    })
-    $(".gallery_change").bind('touchend', function(e){
-      e.preventDefault();
+    $(".gallery_change").on('touchstart mousedown',function(e){
+      var string = $(this).attr("id")
       var number = string.slice(3,4)
       $(this).attr("id", "old" + number)
+    }).bind('touchend mouseup', function(e){
+      $('body').css('background-color','black');
+      var string = $(this).attr("id")
+      var number = string.slice(3,4)
+      $(this).attr("id", "new" + number)
     });
-    // $(".gallery_change").mousedown(function(){
-    //   var number = string.slice(3,4)
-    //   $(this).attr("id", "old" + number)
-    // };
-      // $(".gallery_change").mouseup(function(){
-      //   var number = $(this).attr("id").slice(3,4);
-      //     $(this).attr("id", "new" + number)
-      //   });
   })
 </script>
