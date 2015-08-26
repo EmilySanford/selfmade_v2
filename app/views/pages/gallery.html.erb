@@ -36,12 +36,12 @@
 <script type="text/javascript">
   $(function(){
     console.log("momo")
-    $(".gallery_change").bind('touchstart', function(){
+    $(".gallery_change").on('touchstart', function(){
       var number = string.slice(3,4)
       console.log("heere")
       $(this).attr("id", "old" + number)
     })
-    $(".gallery_change").bind('touchend', function(){
+    $(".gallery_change").on('touchend', function(){
       var number = string.slice(3,4)
       $(this).attr("id", "old" + number)
     });
