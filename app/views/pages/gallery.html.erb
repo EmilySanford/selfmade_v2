@@ -40,30 +40,18 @@
       var number = string.slice(3,4)
       console.log("heere")
       $(this).attr("id", "old" + number)
-    }).bind('touchend', function(){
+    })
+    $(".gallery_change").bind('touchend', function(){
       var number = string.slice(3,4)
       $(this).attr("id", "old" + number)
-    })
+    });
     // $(".gallery_change").mousedown(function(){
-    // var string = $(this).attr("class").split(" ")[1];
-    // var number = $(this).attr("id").slice(3,4);
-    // var toggle = "new" + number + " " + "old" + number
-    // if ($(this).attr("id") == "new1"){
-    //   $(this).attr("id", "old1")
-    // }
-    //
-    // debugger;
-    // if ($(this).attr("id").slice(0,3) == "new"){
-      // console.log("here")
-    // } else {
-      // $(this).attr("id", "new" + number)
-      // console.log("here2")
-    // }
-    // $(this).toggleClass(toggle)
-  // });
-  //     $(".gallery_change").mouseup(function(){
-  //       var number = $(this).attr("id").slice(3,4);
-  //         $(this).attr("id", "new" + number)
-  //       });
+    //   var number = string.slice(3,4)
+    //   $(this).attr("id", "old" + number)
+    // };
+      // $(".gallery_change").mouseup(function(){
+      //   var number = $(this).attr("id").slice(3,4);
+      //     $(this).attr("id", "new" + number)
+      //   });
   })
 </script>
