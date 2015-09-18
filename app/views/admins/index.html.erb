@@ -23,6 +23,7 @@
       <th><%= user.instagram_handler %></th>
       <th><%= user.snapchat_handler %></th>
       <th><%= button_to "delete user", user_path(user), method: :delete %></th>
+      <th><%= button_to "add pictures to user", new_picture_path(user), method: :get %></th>
     </tr>
   <% end %>
   </table>

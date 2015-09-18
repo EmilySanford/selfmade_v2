@@ -24,11 +24,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'normalize-rails'
 gem 'twilio-ruby', '~> 4.2.1'
 gem 'devise'
-gem 'google-api-client', '0.9.pre3'
-gem 'googleauth'
 gem 'httparty'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
+gem "paperclip", "~> 4.3"
+gem 'aws-sdk', '< 2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

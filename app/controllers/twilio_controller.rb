@@ -28,6 +28,3 @@ class TwilioController < ApplicationController
     end
   end
 end
-
-
-# client.messages.create( from: '+1 3059890148', to: '+1' + user.phone_number, body: "Thank you #{user.name} for choosing SelfMade.")

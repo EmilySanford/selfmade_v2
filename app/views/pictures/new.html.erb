@@ -1,0 +1,26 @@
+<%= form_for(@picture, multipart: true, url: upload_picture_path, method: :post) do |f| %>
+  <div class="field">
+    <%= f.label "Upload Pictures for #{@user.name}" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "User ID" %>
+    <%= f.text_field :user_id, :value => @user.id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pic %>
+    <%= f.file_field :pic %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Upload photo' %>
+  </div>
+<% end %>
+
+<% @user.pictures.each do |picture| %>
+  <% if !picture.original_picture_id %>
+    <a href="<%= new_modified_picture_path(@user.id, picture.id) %>"><%=image_tag picture.pic.url, size: "200x200" %></a>
+    <p class="field">File Name: <%= picture.pic_file_name %></p>
+  <% end %>
+<% end %>

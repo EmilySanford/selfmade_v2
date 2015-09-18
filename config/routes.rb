@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'pictures/new/:id' => 'pictures#new', as: :new_picture
+  post 'pictures/upload' => 'pictures#upload', as: :upload_picture
+
+  get 'pictures/modified/new/:user_id/:picture_id' => 'pictures#new_modified', as: :new_modified_picture
 
   get 'quickstart/:id' => 'twilio#quickstart', as: :quickstart
   # The priority is based upon order of creation: first created -> highest priority.
