@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+  console.log("momo");
+  $(".gallery_change").on('touchstart mousedown',function(e){
+    e.preventDefault();
+    var string = $(this).attr("id");
+    var number = string.slice(3,4);
+    $(this).attr("id", "old" + number);
+  }).bind('touchend mouseup', function(e){
+    e.preventDefault();
+    $('body').css('background-color','black');
+    var string = $(this).attr("id");
+    var number = string.slice(3,4);
+    $(this).attr("id", "new" + number);
+  });
+});
