@@ -17,14 +17,17 @@ $(function(){
     $(".gallery_change").on('touchstart mousedown',function(e){
       e.preventDefault();
       $('.nonhighlighted').show();
-    }).bind('touchend mouseup', function(e) {
+    }).on('touchend mouseup', function(e) {
       e.preventDefault();
       $('.nonhighlighted').hide();
-    });
-    $(".gallery_change").on('swipeleft', function(e){
-      console.log("moo");
+    }).on('swipeleft', function(e){
       index += 1;
-      // debugger;
+      if (index > image.length) { index = 0;};
+      $(this).attr("src", image[index]);
+      $('.nonhighlighted').attr("src", imageOld[index]);
+    }).on('swiperight', function(e){
+      index -= 1;
+      if (index < 0) { index = image.length - 1;};
       $(this).attr("src", image[index]);
       $('.nonhighlighted').attr("src", imageOld[index]);
     });
