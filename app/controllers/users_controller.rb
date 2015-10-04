@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-
   def create
-    user_params["phone_number"] = user_params["phone_number"].gsub(/\D/, '').to_s
+    user_params['phone_number'] = user_params["phone_number"].gsub(/\D/, '').to_s
     user = User.create(user_params)
     redirect_to quickstart_path(user)
     # redirect_to controller: 'pages', action: "index", id: user.id
   end
-  
+
   def new
     @user = User.new
   end

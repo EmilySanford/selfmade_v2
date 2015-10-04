@@ -1,12 +1,17 @@
-@media (max-device-width: 992px) {
+@media (min-device-width: 768px) and (max-device-width: 992px) {
+  .landing {
+    margin: 0 auto;
+  }
+
   .landing_2 {
     margin: 0 auto;
-    margin-top: 6%;
+    margin-top: 5%;
+    width: 75vw;
   }
 
   .experience{
     margin:0 auto;
-    margin-top: 12%;
+    margin-top: 5%;
   }
 
   .contact_text_01 {

@@ -1,52 +1,32 @@
-<div class="row landing_page">
-  <div class="col-md-14 center-block col-xs-14 col-sm-14 col-lg-9">
-    <%= image_tag("http://d43k5pvni690z.cloudfront.net/gallery_text_01.png", class: "img-responsive gallery_text col-md-offset-1 col-lg-offset-") %>
-  </div>
-</div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
 
-<!-- <div class="row landing_page">
-  <div class="col-md-14 center-block col-xs-14 col-sm-14 col-lg-9">
-    <%= image_tag("gallery_all.png", class: "img-responsive gallery_01 col-md-offset-1 col-lg-offset-") %>
-  </div>
-</div> -->
-
-
-<div class="row landing_page">
-  <div class="col-md-14 center-block col-xs-14 col-sm-14 col-lg-9">
-    <table class="col-lg-offset-2">
-      <tr>
-        <th class = "gallery_th" ><%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Nazli_01.jpg", class: "img-responsive new1 gallery_change gallery_01", id: "new1")%></th>
-        <th class = "gallery_th" ><%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Tory_01.jpg", class: "img-responsive new2 gallery_change gallery_01", id: "new2")%></th>
-        <th class = "gallery_th" ><%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Nazli_03.jpg", class: "img-responsive new3 gallery_change gallery_01", id: "new3")%></th>
-      </tr>
-      <tr>
-        <th class = "gallery_th" ><%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Laura_01.jpg", class: "img-responsive new4 gallery_change gallery_01", id: "new4", id: "new4")%></th>
-        <th class = "gallery_th" ><%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Chinae_01.jpg", class: "img-responsive new5 gallery_change gallery_01", id: "new5")%></th>
-        <th class = "gallery_th" ><%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Kali_01.jpg", class: "img-responsive new6 gallery_change gallery_01", id: "new6")%></th>
-      </tr>
-      <tr>
-        <th class = "gallery_th" ><%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Erin_01.jpg", class: "img-responsive new7 gallery_change gallery_01", id: "new7")%></th>
-        <th class = "gallery_th" ><%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Anya_01.png", class: "img-responsive new8 gallery_change gallery_01", id: "new8")%></th>
-        <th class = "gallery_th" ><%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Ecem_01.jpg", class: "img-responsive new9 gallery_change gallery_01", id: "new9")%></th>
-      </tr>
-    </table>
+<div class="row">
+  <div class="col-md-14 center-block col-xs-14 col-sm-14 col-lg-14">
+      <%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Nazli_01.jpg", class: "gallery_change", style: "position:absolute")%>
+      <%= image_tag("http://d1wa66qgcl7v1x.cloudfront.net/Nazli_02.jpg", class: "gallery_change nonhighlighted", style: "position:absolute; display:none;")%>
+    </div>
   </div>
 </div>
 
 <script type="text/javascript">
 $(function(){
-  console.log("momo")
-  $(".gallery_change").on('touchstart mousedown',function(e){
-    e.preventDefault();
-    var string = $(this).attr("id")
-    var number = string.slice(3,4)
-    $(this).attr("id", "old" + number)
-  }).bind('touchend mouseup', function(e){
-    e.preventDefault();
-    $('body').css('background-color','black');
-    var string = $(this).attr("id")
-    var number = string.slice(3,4)
-    $(this).attr("id", "new" + number)
-  });
+  console.log("momo");
+  var image = ["http://d1wa66qgcl7v1x.cloudfront.net/Nazli_01.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Tory_01.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Nazli_03.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Laura_01.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Chinae_01.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Kali_01.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Erin_01.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Anya_01.png", "http://d1wa66qgcl7v1x.cloudfront.net/Ecem_01.jpg"];
+  var imageOld = ["http://d1wa66qgcl7v1x.cloudfront.net/Nazli_02.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Tory_02.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Nazli_04.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Laura_02.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Chinae_02.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Kali_02.jpg", "http://d1wa66qgcl7v1x.cloudfront.net/Erin_02.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Red.svg/120px-Red.svg.png", "http://d1wa66qgcl7v1x.cloudfront.net/Ecem_02.jpg"];
+  var index = 0;
+    $(".gallery_change").on('touchstart mousedown',function(e){
+      e.preventDefault();
+      $('.nonhighlighted').show();
+    }).bind('touchend mouseup', function(e) {
+      e.preventDefault();
+      $('.nonhighlighted').hide();
+    });
+    $(".gallery_change").on('swipeleft', function(e){
+      console.log("moo");
+      index += 1;
+      // debugger;
+      $(this).attr("src", image[index]);
+      $('.nonhighlighted').attr("src", imageOld[index]);
+    });
 })
 </script>

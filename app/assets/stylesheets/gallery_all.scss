@@ -70,19 +70,23 @@
 	content:url("http://d1wa66qgcl7v1x.cloudfront.net/Ecem_02.jpg");
 }
 
-.gallery_th{
-	width:33.333%
-}
-
 .gallery_change{
-	width:98%;
+	width:55vh;
 	-webkit-touch-callout: none !important;
-	-webkit-user-select: none !important; 
+	-webkit-user-select: none !important;
 	// height: 98%;
-	margin: 0 auto;
+	// margin: 0 auto;
+	left: 50%;
+	transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
 	margin-top: 2%;
-// 	margin-left: 0;
+	// margin-left: 2vh;
 // 	margin-right: 0;
 // 	padding-left: 0;
 // 	padding-right: 0;
 }
+
+// @media (min-width: 992px) {
+// 	margin-left: 48vh;
+// }

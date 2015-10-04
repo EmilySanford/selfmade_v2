@@ -18,4 +18,5 @@
 
 
 
+
   // $("body").on('touchstart mousedown',".gallery_change",function(e){
