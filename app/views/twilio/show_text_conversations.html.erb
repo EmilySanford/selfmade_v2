@@ -8,5 +8,14 @@
 <% end %>
 <p class="white_color_and_center"> Message: <%= message.body %>
 <p class="white_color_and_center"> Date Sent: <%= message.date_sent %> <p>
+<% if message.num_media.to_i != 0 %>
+  <% auth = {:username=>"AC6330f311861cdd30da90cba2522e4cc5", :password=>"80f5ed504353b8b438fa852a09379a27"} %>
+  <% a = HTTParty.get("https://api.twilio.com" + message.media.instance_variable_get('@path'), :basic_auth => auth) %>
+  <% if a['TwilioResponse']['MediaList']['Media'] != nil %>
+    <% b = "https://api.twilio.com" + a['TwilioResponse']['MediaList']['Media']['Uri']  %>
+    <a href="<%= b %>"><img src="<%= b %>" width="100" height="100"></a>
+  <% end %>
+<% end %>
+
 </div><br>
 <% end %>

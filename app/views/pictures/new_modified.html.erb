@@ -25,6 +25,11 @@
 
 
 <% @picture.modified_pictures.each do |picture| %>
-  <%=image_tag picture.pic.url, size: "200x200" %>
-  <p class="field">File Name: <%= picture.pic_file_name %></p>
+  <% if picture.pic_content_type != "video/quicktime" %>
+    <%=image_tag picture.pic.url, size: "200x200" %>
+    <p class="field">File Name: <%= picture.pic_file_name %></p>
+  <% else %>
+    <%=video_tag picture.pic.url, size: "200x200", autoplay: true, controls: true, loop: true %>
+    <p class="field">File Name: <%= picture.pic_file_name %></p>
+  <% end %>
 <% end %>
