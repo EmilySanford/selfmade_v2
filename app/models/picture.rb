@@ -24,7 +24,7 @@ class Picture  < ActiveRecord::Base
   belongs_to :original_picture, class_name: "Picture"
 
   has_attached_file :pic, :path => ":user_name/:original_picture_id/:picture_type(:style)/:id/:basename.:extension", :storage => :s3, :bucket => 'selfmadepictures', :url =>':s3_domain_url', :s3_host_alias => 'd1wa66qgcl7v1x.cloudfront.net'
- validates_attachment_content_type :pic, content_type: /\Aimage\/.*\Z/
+ validates_attachment_content_type :pic, content_type: [/\Aimage\/.*\Z/, /\Avideo\/.*\Z/]
   belongs_to :user
 end
 

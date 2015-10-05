@@ -1,9 +1,9 @@
-<div class = "row" >
+<div class = "row logout" >
   <%= link_to "Log Out of Admin", destroy_admin_session_path, method: 'delete' if current_admin %>
 </div>
 
-<div class = "row" >
-  <%= link_to "Add new users", new_user_path if current_admin %>
+<div class = "row add_users" >
+  <%= link_to "Add new users", new_user_path if current_admin%>
 </div>
 
 <div class = "row" >
@@ -14,6 +14,7 @@
       <th>Instagram</th>
       <th>Snapchat</th>
       <th>Delete user</th>
+      <th>add pictures to user</th>
     </tr>
 
   <% @users.each do |user| %>

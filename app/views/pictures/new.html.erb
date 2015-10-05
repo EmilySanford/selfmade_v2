@@ -20,7 +20,12 @@
 
 <% @user.pictures.each do |picture| %>
   <% if !picture.original_picture_id %>
-    <a href="<%= new_modified_picture_path(@user.id, picture.id) %>"><%=image_tag picture.pic.url, size: "200x200" %></a>
-    <p class="field">File Name: <%= picture.pic_file_name %></p>
+    <% if picture.pic_content_type != "video/quicktime" %>
+      <a href="<%= new_modified_picture_path(@user.id, picture.id) %>"><%=image_tag picture.pic.url, size: "200x200" %></a>
+      <p class="field">File Name: <%= picture.pic_file_name %></p>
+    <% else %>
+      <a href="<%= new_modified_picture_path(@user.id, picture.id) %>"><%=video_tag picture.pic.url, size: "200x200", autoplay: true, controls: true, loop: true %></a>
+      <p class="field">File Name: <%= picture.pic_file_name %></p>
+    <% end %>
   <% end %>
 <% end %>

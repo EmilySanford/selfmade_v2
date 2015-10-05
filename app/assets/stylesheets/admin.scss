@@ -1,3 +1,52 @@
+.devise\/sessions {
+  // background-color: white;
+  .container-fluid{
+      h2 {
+        color: white;
+      }
+    form {
+      div.field {
+        input {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.admins {
+  .container-fluid {
+    .row {
+
+      table.admintable {
+        margin-left: 0;
+        margin-top: 4%;
+
+        tbody{
+          tr {
+            th {
+              form.button_to {
+                input {
+                  color:black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .add_users {
+      float:left;
+      font-size: 200%;
+    }
+
+    .logout {
+      float: right;
+      font-size: 200%;
+    }
+  }
+}
+
 .admintable {
   width: 100%;
   font-size: 25px;
