@@ -1,5 +1,7 @@
 <h1> Texts with <%= @user.name %>, Phone Number: <%= @user.phone_number %></h1>
 
+<a href="<%= twilio_new_path %>">Send Text Message to <%= @user.name %></a>
+
 <% @sorted_all_messages.each do |message| %>
 <% if message.from == '+14807253840'  %>
   <div class ="blue_div">
@@ -10,9 +12,9 @@
 <p class="white_color_and_center"> Date Sent: <%= message.date_sent %> <p>
 <% if message.num_media.to_i != 0 %>
   <% auth = {:username=>"AC6330f311861cdd30da90cba2522e4cc5", :password=>"80f5ed504353b8b438fa852a09379a27"} %>
-  <% a = HTTParty.get("https://api.twilio.com" + message.media.instance_variable_get('@path'), :basic_auth => auth) %>
-  <% if a['TwilioResponse']['MediaList']['Media'] != nil %>
-    <% b = "https://api.twilio.com" + a['TwilioResponse']['MediaList']['Media']['Uri']  %>
+  <% a = HTTParty.get("https://api.twilio.com" + message.subresource_uris["media"], :basic_auth => auth) %>
+  <% if a['media_list'] != [] %>
+    <% b = "https://api.twilio.com" + a['media_list'][0]['uri'].chomp('.json')  %>
     <a href="<%= b %>"><img src="<%= b %>" width="100" height="100"></a>
   <% end %>
 <% end %>

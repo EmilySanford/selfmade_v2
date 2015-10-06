@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get 'pictures/modified/new/:user_id/:picture_id' => 'pictures#new_modified', as: :new_modified_picture
 
   get 'quickstart/:id' => 'twilio#quickstart', as: :quickstart
+  get 'twilio/new/:id' => 'twilio#new', as: :twilio_new
+  post 'twilio/send/:id' => 'twilio#send_message', as: :send_message
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

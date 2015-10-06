@@ -1,0 +1,18 @@
+<%= form_tag(send_message_path) do %>
+  <%= hidden_field_tag 'user_id', 'params[:id]'  %>
+
+  <div class="form_label_2">
+    <label class="col-sm-3 control-label form_label">Body</label>
+    <div class="col-sm-9">
+      <%= text_area_tag :body, nil, class: "form-control input-lg survey_input" %>
+    </div>
+  </div>
+
+  <div class="form_label_2">
+    <label class="col-sm-3 control-label form_label">Photos</label>
+    <div class="col-sm-9">
+      <%= text_field_tag :picture, nil, class: "form-control input-lg survey_input" %>
+    </div>
+  </div>
+
+<% end %>
